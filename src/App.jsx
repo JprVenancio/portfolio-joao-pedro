@@ -24,33 +24,33 @@ const projetos = [
   {
     titulo: "Sistema de Controle de Estoque",
     descricao:
-      "Projeto inspirado em operações logísticas para gerenciamento de produtos, quantidades e organização de estoque.",
-    link: "https://github.com/JprVenancio",
+      "Aplicação voltada para gerenciamento de produtos, atualização de quantidades e organização de estoque, inspirada em operações logísticas reais.",
+    link: "https://github.com/JprVenancio/controle-estoque",
     techs: ["React", "JavaScript", "SQL"],
-    destaque: "Projeto prático",
+    destaque: "Projeto principal",
   },
   {
     titulo: "Cadastro de Clientes",
     descricao:
-      "Aplicação CRUD para cadastro, listagem, edição e gerenciamento de clientes.",
-    link: "https://github.com/JprVenancio",
+      "Sistema CRUD para cadastro, listagem, edição e remoção de clientes, com foco em organização de dados e lógica de programação.",
+    link: "https://github.com/JprVenancio/cadastro-clientes",
     techs: ["React", "JavaScript", "CSS"],
     destaque: "CRUD",
   },
   {
     titulo: "Dashboard Logístico",
     descricao:
-      "Painel para análise de dados operacionais, estoque e indicadores logísticos.",
-    link: "https://github.com/JprVenancio",
+      "Painel para acompanhamento de indicadores operacionais, estoque e organização de dados voltados ao contexto logístico.",
+    link: "https://github.com/JprVenancio/dashboard-logistico",
     techs: ["Power BI", "Excel", "SQL"],
     destaque: "Dados",
   },
   {
     titulo: "TCC - Computação Quântica",
     descricao:
-      "Estudo sobre fundamentos, algoritmos e aplicações da computação quântica na ciência da computação.",
-    link: "https://github.com/JprVenancio",
-    techs: ["Pesquisa", "Computação Quântica"],
+      "Trabalho acadêmico sobre fundamentos, algoritmos e aplicações da computação quântica na ciência da computação e tecnologias do futuro.",
+    link: "https://github.com/JprVenancio/tcc-computacao-quantica",
+    techs: ["Pesquisa", "Computação Quântica", "Algoritmos"],
     destaque: "Acadêmico",
   },
 ];
