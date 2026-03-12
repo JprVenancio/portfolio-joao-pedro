@@ -13,6 +13,9 @@ import {
   BarChart3,
   Layers3,
   Cpu,
+  ChevronDown,
+  GraduationCap,
+  Briefcase,
 } from "lucide-react";
 
 const projetos = [
@@ -115,17 +118,28 @@ const quickInfo = [
   },
 ];
 
+const tags = [
+  "JavaScript",
+  "React",
+  "SQL",
+  "MySQL",
+  "Banco de Dados",
+  "Lógica de Programação",
+  "Suporte Técnico",
+  "Redes Básicas",
+  "Excel",
+  "Análise de Dados",
+];
+
 export default function App() {
   return (
     <div className="min-h-screen bg-[#050816] text-white selection:bg-cyan-400/20 selection:text-white">
-      {/* FUNDO */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute left-[-10%] top-[-10%] h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
         <div className="absolute right-[-10%] top-[10%] h-96 w-96 rounded-full bg-violet-500/10 blur-3xl" />
         <div className="absolute bottom-[-10%] left-[20%] h-80 w-80 rounded-full bg-blue-500/10 blur-3xl" />
       </div>
 
-      {/* HEADER */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050816]/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a
@@ -219,7 +233,6 @@ export default function App() {
               ))}
             </div>
 
-            {/* PREENCHIMENTO EXTRA DO HERO */}
             <div className="mt-10 grid gap-3 sm:grid-cols-1">
               {quickInfo.map((item) => (
                 <div
@@ -231,6 +244,15 @@ export default function App() {
                 </div>
               ))}
             </div>
+
+            {/* SETAS DE ROLAGEM */}
+            <a
+              href="#sobre"
+              className="mt-10 flex w-fit flex-col items-center gap-1 text-cyan-300/80 transition hover:text-cyan-200"
+            >
+              <ChevronDown size={24} className="animate-bounce" />
+              <ChevronDown size={24} className="-mt-3 animate-bounce" />
+            </a>
           </div>
 
           <div className="flex flex-col justify-center gap-6">
@@ -322,44 +344,82 @@ export default function App() {
           <div className="mt-4 h-1 w-24 rounded-full bg-cyan-400" />
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {habilidades.map((item) => (
-            <div
-              key={item.titulo}
-              className="group rounded-3xl border border-white/10 bg-[#0d1324]/90 p-6 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-[#111a30]"
-            >
-              <div className="text-cyan-300 transition duration-300 group-hover:text-cyan-200">
-                {item.icon}
-              </div>
-              <h3 className="mt-4 text-xl font-bold text-white">
-                {item.titulo}
-              </h3>
-              <p className="mt-3 leading-7 text-slate-400">{item.descricao}</p>
+        <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
+          <div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+              {habilidades.map((item) => (
+                <div
+                  key={item.titulo}
+                  className="group rounded-3xl border border-white/10 bg-[#0d1324]/90 p-6 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-[#111a30]"
+                >
+                  <div className="text-cyan-300 transition duration-300 group-hover:text-cyan-200">
+                    {item.icon}
+                  </div>
+                  <h3 className="mt-4 text-xl font-bold text-white">
+                    {item.titulo}
+                  </h3>
+                  <p className="mt-3 leading-7 text-slate-400">{item.descricao}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
 
-        <div className="mt-10 rounded-3xl border border-white/10 bg-white/5 p-6">
-          <div className="flex flex-wrap gap-3">
-            {[
-              "JavaScript",
-              "React",
-              "SQL",
-              "MySQL",
-              "Banco de Dados",
-              "Lógica de Programação",
-              "Suporte Técnico",
-              "Redes Básicas",
-              "Excel",
-              "Análise de Dados",
-            ].map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-100 transition duration-300 hover:scale-[1.03] hover:border-cyan-300/40 hover:bg-cyan-400/20"
-              >
-                {skill}
-              </span>
-            ))}
+            <div className="mt-10 rounded-3xl border border-white/10 bg-white/5 p-6">
+              <div className="flex flex-wrap gap-3">
+                {tags.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-100 transition duration-300 hover:scale-[1.03] hover:border-cyan-300/40 hover:bg-cyan-400/20"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* PREENCHIMENTO DO ESPAÇO VAZIO */}
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-400/10 via-white/5 to-violet-500/10 p-6 shadow-lg shadow-black/20">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
+              Resumo técnico
+            </p>
+            <h3 className="mt-4 text-2xl font-bold text-white">
+              Competências em evolução
+            </h3>
+
+            <div className="mt-6 space-y-4">
+              <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                <GraduationCap className="mt-1 text-cyan-300" size={20} />
+                <div>
+                  <p className="font-semibold text-white">Formação</p>
+                  <p className="text-sm leading-6 text-slate-400">
+                    Graduação em Ciência da Computação com foco em fundamentos,
+                    algoritmos, dados e tecnologia.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                <Briefcase className="mt-1 text-cyan-300" size={20} />
+                <div>
+                  <p className="font-semibold text-white">Vivência prática</p>
+                  <p className="text-sm leading-6 text-slate-400">
+                    Atuação com suporte técnico, manutenção, organização de processos
+                    e aprendizado aplicado em ambiente real.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                <Code2 className="mt-1 text-cyan-300" size={20} />
+                <div>
+                  <p className="font-semibold text-white">Direção profissional</p>
+                  <p className="text-sm leading-6 text-slate-400">
+                    Construção de portfólio, projetos práticos e fortalecimento da base
+                    para oportunidades em TI e desenvolvimento.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
