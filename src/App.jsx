@@ -97,14 +97,12 @@ const stats = [
 export default function App() {
   return (
     <div className="min-h-screen bg-[#070707] text-white selection:bg-orange-500/30 selection:text-white">
-      {/* FUNDO DECORATIVO */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute left-[-10%] top-[-10%] h-72 w-72 rounded-full bg-orange-500/10 blur-3xl" />
         <div className="absolute right-[-10%] top-[10%] h-96 w-96 rounded-full bg-fuchsia-500/10 blur-3xl" />
         <div className="absolute bottom-[-10%] left-[20%] h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl" />
       </div>
 
-      {/* HEADER */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a
@@ -138,21 +136,20 @@ export default function App() {
         </div>
       </header>
 
-      {/* HERO */}
       <section
         id="inicio"
-        className="relative flex min-h-[88vh] items-center overflow-hidden"
+        className="relative flex min-h-[92vh] items-center overflow-hidden"
       >
         <img
           src="/banner.jpg"
           alt="Banner tecnológico"
-          className="absolute inset-0 h-full w-full object-cover opacity-35"
+          className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(249,115,22,0.15),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.15),transparent_25%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/85" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(249,115,22,0.18),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.16),transparent_25%)]" />
 
-        <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-[1.2fr_0.8fr] md:py-28">
+        <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-[1.15fr_0.85fr] md:py-28">
           <div className="flex flex-col justify-center">
             <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-1.5 text-sm font-medium text-orange-300">
               <Sparkles size={16} />
@@ -173,7 +170,7 @@ export default function App() {
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#projetos"
-                className="inline-flex items-center gap-2 rounded-xl bg-orange-500 px-6 py-3 font-semibold text-black transition hover:scale-[1.02] hover:bg-orange-400"
+                className="inline-flex items-center gap-2 rounded-xl bg-orange-500 px-6 py-3 font-semibold text-black transition duration-300 hover:scale-[1.03] hover:bg-orange-400"
               >
                 Ver Projetos
                 <ArrowRight size={18} />
@@ -181,7 +178,7 @@ export default function App() {
 
               <a
                 href="#contato"
-                className="rounded-xl border border-orange-500/40 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-orange-500 hover:text-black"
+                className="rounded-xl border border-orange-500/40 bg-white/5 px-6 py-3 font-semibold text-white transition duration-300 hover:bg-orange-500 hover:text-black"
               >
                 Contato
               </a>
@@ -191,7 +188,7 @@ export default function App() {
               {["React", "JavaScript", "SQL", "TI", "Dados"].map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300"
+                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300 transition hover:border-orange-500/40 hover:text-orange-200"
                 >
                   {item}
                 </span>
@@ -199,16 +196,24 @@ export default function App() {
             </div>
           </div>
 
-          <div className="flex items-end">
+          <div className="flex flex-col justify-center gap-6">
+            <div className="mx-auto w-full max-w-sm overflow-hidden rounded-[28px] border border-orange-500/20 bg-white/5 p-3 shadow-2xl shadow-black/30 backdrop-blur">
+              <img
+                src="/perfil.jpg"
+                alt="João Pedro"
+                className="h-[420px] w-full rounded-[22px] object-cover object-center"
+              />
+            </div>
+
             <div className="grid w-full gap-4 sm:grid-cols-2">
               {stats.map((item) => (
                 <div
                   key={item.titulo}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg shadow-black/20 backdrop-blur"
+                  className="group rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg shadow-black/20 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-orange-500/10"
                 >
-                  <div className="flex items-center gap-2 text-orange-400">
+                  <div className="flex items-center gap-2 text-orange-400 transition group-hover:text-orange-300">
                     {item.icon}
-                    <span className="text-sm font-medium text-slate-400">
+                    <span className="text-sm font-medium text-slate-400 group-hover:text-slate-200">
                       {item.titulo}
                     </span>
                   </div>
@@ -222,7 +227,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* SOBRE */}
       <section id="sobre" className="mx-auto max-w-6xl px-6 py-20">
         <div className="mb-10">
           <span className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">
@@ -250,7 +254,7 @@ export default function App() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-orange-500/20 bg-gradient-to-br from-orange-500/10 via-transparent to-fuchsia-500/10 p-8">
+          <div className="rounded-3xl border border-orange-500/20 bg-gradient-to-br from-orange-500/10 via-transparent to-fuchsia-500/10 p-8 transition duration-300 hover:border-orange-400/40 hover:shadow-lg hover:shadow-orange-950/20">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-300">
               Objetivo
             </p>
@@ -265,7 +269,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* HABILIDADES */}
       <section id="habilidades" className="mx-auto max-w-6xl px-6 py-20">
         <div className="mb-10">
           <span className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">
@@ -281,9 +284,11 @@ export default function App() {
           {habilidades.map((item) => (
             <div
               key={item.titulo}
-              className="rounded-3xl border border-white/10 bg-[#111111]/90 p-6 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-orange-950/20"
+              className="rounded-3xl border border-white/10 bg-[#111111]/90 p-6 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-[#161616] hover:shadow-orange-950/20"
             >
-              <div className="text-orange-400">{item.icon}</div>
+              <div className="text-orange-400 transition duration-300 group-hover:text-orange-300">
+                {item.icon}
+              </div>
               <h3 className="mt-4 text-xl font-bold text-white">
                 {item.titulo}
               </h3>
@@ -308,7 +313,7 @@ export default function App() {
             ].map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-2 text-sm font-medium text-orange-200"
+                className="rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-2 text-sm font-medium text-orange-200 transition duration-300 hover:scale-[1.03] hover:border-orange-400/40 hover:bg-orange-500/20"
               >
                 {skill}
               </span>
@@ -317,7 +322,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* PROJETOS */}
       <section id="projetos" className="mx-auto max-w-6xl px-6 py-20">
         <div className="mb-10">
           <span className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">
@@ -339,11 +343,11 @@ export default function App() {
               href={projeto.link}
               target="_blank"
               rel="noreferrer"
-              className="group rounded-3xl border border-white/10 bg-[#111111]/90 p-6 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-orange-950/20"
+              className="group rounded-3xl border border-white/10 bg-[#111111]/90 p-6 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-[#161616] hover:shadow-orange-950/20"
             >
               <div className="mb-4 flex items-start justify-between gap-4">
                 <div>
-                  <span className="rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-orange-300">
+                  <span className="rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-orange-300 transition group-hover:bg-orange-500/20">
                     {projeto.destaque}
                   </span>
                   <h3 className="mt-4 text-xl font-bold text-white">
@@ -363,7 +367,7 @@ export default function App() {
                 {projeto.techs.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-300"
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-300 transition group-hover:border-orange-500/20"
                   >
                     {tech}
                   </span>
@@ -382,7 +386,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONTATO */}
       <section id="contato" className="mx-auto max-w-6xl px-6 py-20">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-orange-500/10 via-white/5 to-fuchsia-500/10 p-8 shadow-lg shadow-black/20 md:p-10">
           <span className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">
@@ -403,7 +406,7 @@ export default function App() {
               href="https://github.com/JprVenancio"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/40 px-5 py-3 transition hover:border-orange-500/40 hover:bg-black/60"
+              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/40 px-5 py-3 transition duration-300 hover:border-orange-500/40 hover:bg-black/60 hover:scale-[1.02]"
             >
               <Github size={22} className="text-orange-400" />
               <span className="font-medium text-white">GitHub</span>
@@ -413,7 +416,7 @@ export default function App() {
               href="https://www.linkedin.com/in/joão-pedro-rodrigues-venancio-688588235"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/40 px-5 py-3 transition hover:border-orange-500/40 hover:bg-black/60"
+              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/40 px-5 py-3 transition duration-300 hover:border-orange-500/40 hover:bg-black/60 hover:scale-[1.02]"
             >
               <Linkedin size={22} className="text-orange-400" />
               <span className="font-medium text-white">LinkedIn</span>
@@ -421,7 +424,7 @@ export default function App() {
 
             <a
               href="mailto:Jprvenancio2304@gmail.com"
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/40 px-5 py-3 transition hover:border-orange-500/40 hover:bg-black/60"
+              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/40 px-5 py-3 transition duration-300 hover:border-orange-500/40 hover:bg-black/60 hover:scale-[1.02]"
             >
               <Mail size={22} className="text-orange-400" />
               <span className="font-medium text-white">Email</span>
@@ -430,7 +433,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-slate-500">
         © 2026 João Pedro Rodrigues Venâncio. Portfólio desenvolvido com React e Tailwind CSS.
       </footer>
