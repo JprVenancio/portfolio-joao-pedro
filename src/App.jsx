@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Github,
   Linkedin,
@@ -13,9 +14,10 @@ import {
   BarChart3,
   Layers3,
   Cpu,
-  ChevronDown,
   GraduationCap,
   Briefcase,
+  FileText,
+  ChevronsDown,
 } from "lucide-react";
 
 const projetos = [
@@ -132,6 +134,19 @@ const tags = [
 ];
 
 export default function App() {
+  const [showScrollHints, setShowScrollHints] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setShowScrollHints(window.scrollY < 80);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#050816] text-white selection:bg-cyan-400/20 selection:text-white">
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
@@ -187,6 +202,33 @@ export default function App() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#050816] via-[#050816]/85 to-[#050816]/95" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.14),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.16),transparent_25%)]" />
 
+        {/* SETAS LATERAIS VISUAIS */}
+        <div
+          className={`pointer-events-none absolute inset-y-0 left-4 z-20 hidden items-center md:flex transition-all duration-500 ${
+            showScrollHints
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-4"
+          }`}
+        >
+          <div className="flex flex-col items-center gap-1 text-cyan-300/70">
+            <ChevronsDown size={26} className="animate-bounce" />
+            <ChevronsDown size={26} className="-mt-3 animate-bounce" />
+          </div>
+        </div>
+
+        <div
+          className={`pointer-events-none absolute inset-y-0 right-4 z-20 hidden items-center md:flex transition-all duration-500 ${
+            showScrollHints
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 translate-x-4"
+          }`}
+        >
+          <div className="flex flex-col items-center gap-1 text-cyan-300/70">
+            <ChevronsDown size={26} className="animate-bounce" />
+            <ChevronsDown size={26} className="-mt-3 animate-bounce" />
+          </div>
+        </div>
+
         <div className="relative mx-auto grid max-w-6xl gap-14 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:py-28">
           <div className="flex flex-col justify-center">
             <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1.5 text-sm font-medium text-cyan-200">
@@ -205,13 +247,23 @@ export default function App() {
               oportunidades sólidas na área de tecnologia.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            {/* BOTÕES + CURRÍCULO PEQUENO */}
+            <div className="mt-8 flex flex-wrap items-stretch gap-4">
               <a
                 href="#projetos"
                 className="inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition duration-300 hover:scale-[1.03] hover:bg-cyan-300"
               >
                 Ver Projetos
                 <ArrowRight size={18} />
+              </a>
+
+              <a
+                href="/curriculo-joao-pedro.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-xl border border-cyan-400/30 bg-white/5 px-5 py-3 font-semibold text-cyan-200 transition duration-300 hover:scale-[1.03] hover:border-cyan-300/40 hover:bg-cyan-400/10"
+              >
+                <FileText size={18} />
+                Currículo
               </a>
 
               <a
@@ -244,15 +296,6 @@ export default function App() {
                 </div>
               ))}
             </div>
-
-            {/* SETAS DE ROLAGEM */}
-            <a
-              href="#sobre"
-              className="mt-10 flex w-fit flex-col items-center gap-1 text-cyan-300/80 transition hover:text-cyan-200"
-            >
-              <ChevronDown size={24} className="animate-bounce" />
-              <ChevronDown size={24} className="-mt-3 animate-bounce" />
-            </a>
           </div>
 
           <div className="flex flex-col justify-center gap-6">
@@ -377,7 +420,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* PREENCHIMENTO DO ESPAÇO VAZIO */}
           <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-400/10 via-white/5 to-violet-500/10 p-6 shadow-lg shadow-black/20">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
               Resumo técnico
