@@ -49,7 +49,7 @@ const projetos = [
     titulo: "TCC - Computação Quântica",
     descricao:
       "Trabalho acadêmico sobre fundamentos, algoritmos e aplicações da computação quântica na ciência da computação e tecnologias do futuro.",
-    link: "tcc-joao-pedro-c9y10yn1t-jprvenancios-projects.vercel.app",
+    link: "https://tcc-joao-pedro.vercel.app",
     techs: ["Pesquisa", "Computação Quântica", "Algoritmos"],
     destaque: "Acadêmico",
   },
