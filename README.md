@@ -1,16 +1,38 @@
-# React + Vite
+Portfólio João Pedro;
+Meu portfólio pessoal de tecnologia desenvolvido em React, com foco em apresentar minha trajetória, habilidades, projetos e formas de contato de maneira moderna e profissional;
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sobre o projeto;
+Este projeto foi criado para reunir meus principais trabalhos, competências e objetivos profissionais em um só lugar. A proposta é demonstrar minha evolução na área de tecnologia, com destaque para desenvolvimento, banco de dados, suporte técnico e análise de dados;
 
-Currently, two official plugins are available:
+Funcionalidades;
+- Apresentação pessoal e profissional;
+- Sessão de habilidades e conhecimentos;
+- Exibição de projetos em destaque;
+- Links para GitHub, LinkedIn e contato por e-mail;
+- Layout moderno, responsivo e visualmente atrativo;
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tecnologias utilizadas;
+- React;
+- JavaScript;
+- Tailwind CSS;
+- Lucide React;
 
-## React Compiler
+Projetos em destaque no portfólio;
+- Sistema de Controle de Estoque;
+- Cadastro de Clientes;
+- Dashboard Logístico;
+- TCC sobre Computação Quântica;
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Como executar o projeto;
+npm install;
+npm run dev;
 
-## Expanding the ESLint configuration
+Objetivo;
+Fortalecer minha presença profissional na área de tecnologia e apresentar meus projetos de forma organizada para recrutadores, empresas e conexões da área;
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Autor;
+João Pedro Rodrigues Venâncio;
+
+GitHub: JprVenancio;
+LinkedIn: João Pedro Rodrigues Venâncio;
+E-mail: Jprvenancio2304@gmail.com;
