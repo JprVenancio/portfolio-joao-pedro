@@ -25,7 +25,7 @@ const projetos = [
     titulo: "Sistema de Controle de Estoque",
     descricao:
       "Aplicação voltada para gerenciamento de produtos, atualização de quantidades e organização de estoque, inspirada em operações logísticas reais.",
-    link: "https://github.com/JprVenancio/controle-estoque",
+    link: "https://controle-estoque-react-wheat.vercel.app",
     techs: ["React", "JavaScript", "SQL"],
     destaque: "Projeto principal",
   },
@@ -33,7 +33,7 @@ const projetos = [
     titulo: "Cadastro de Clientes",
     descricao:
       "Sistema CRUD para cadastro, listagem, edição e remoção de clientes, com foco em organização de dados e lógica de programação.",
-    link: "https://github.com/JprVenancio/cadastro-clientes",
+    link: "https://cadastro-clientes-react-green.vercel.app",
     techs: ["React", "JavaScript", "CSS"],
     destaque: "CRUD",
   },
@@ -41,7 +41,7 @@ const projetos = [
     titulo: "Dashboard Logístico",
     descricao:
       "Painel para acompanhamento de indicadores operacionais, estoque e organização de dados voltados ao contexto logístico.",
-    link: "https://github.com/JprVenancio/dashboard-logistico",
+    link: "https://dashboard-logistico.vercel.app",
     techs: ["Power BI", "Excel", "SQL"],
     destaque: "Dados",
   },
@@ -49,7 +49,7 @@ const projetos = [
     titulo: "TCC - Computação Quântica",
     descricao:
       "Trabalho acadêmico sobre fundamentos, algoritmos e aplicações da computação quântica na ciência da computação e tecnologias do futuro.",
-    link: "https://github.com/JprVenancio/tcc-computacao-quantica",
+    link: "tcc-joao-pedro-c9y10yn1t-jprvenancios-projects.vercel.app",
     techs: ["Pesquisa", "Computação Quântica", "Algoritmos"],
     destaque: "Acadêmico",
   },
@@ -301,7 +301,7 @@ export default function App() {
           <div className="flex flex-col justify-center gap-6">
             <div className="mx-auto w-full max-w-sm overflow-hidden rounded-[28px] border border-cyan-400/20 bg-white/5 p-3 shadow-2xl shadow-black/30 backdrop-blur">
               <img
-                src="/perfil.jpg"
+                src="/perfil.png"
                 alt="João Pedro"
                 className="h-[420px] w-full rounded-[22px] object-cover object-center"
               />
